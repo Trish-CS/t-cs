@@ -260,8 +260,8 @@ nav { margin-left: auto; }
 .pixel-row { display: flex; gap: 2px; }
 
 .pixel-cell {
-  width: 20px;
-  height: 20px;
+  width: 16px;
+  height: 16px;
   image-rendering: pixelated;
   transition: background 0.3s;
 }
@@ -362,7 +362,7 @@ nav { margin-left: auto; }
 
 .card-period {
   font-family: 'Share Tech Mono', monospace;
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   color: var(--text-muted);
   white-space: nowrap;
   padding: 0.25rem 0.6rem;
@@ -391,7 +391,7 @@ nav { margin-left: auto; }
 }
 
 .edu-icon { font-size: 1.5rem; flex-shrink: 0; }
-.edu-note { font-size: 0.82rem; color: var(--text-muted); margin-top: 0.3rem; }
+.edu-note { font-size: 0.92rem; color: var(--text-muted); margin-top: 0.3rem; }
 
 /* ── FOOTER ───────────────────────────────────────────────────────────────── */
 .footer {

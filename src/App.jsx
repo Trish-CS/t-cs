@@ -36,15 +36,23 @@ function StarField({ dark }) {
 // ── Pixel Avatar ───────────────────────────────────────────────────────────────
 function PixelAvatar() {
   const pixels = [
-    "  XXXXX  ",
-    " XXXXXXX ",
-    " XOXOXOX ",
-    " XXXXXXX ",
-    "  XXXXX  ",
-    " XXXXXXX ",
-    "XXXXXXXXX",
-    " X     X ",
-    " X     X ",
+    "          XXXXXX          ",
+    "         XXXXXXXX         ",
+    "        XXXXXXXXXX        ",
+    "        XXOXXXXOXX        ",
+    "       XXXXXXXXXXXX       ",
+    "       XXOXXXXXXOXX       ",
+    "        XXOOOOOOXX        ",
+    "         XXXXXXXX         ",
+    "           XXXX    X      ", // right arm up
+    "           XXXX   X       ",
+    "        XXXXXXXXXX        ",
+    "       XXXXXXXXXX         ",
+    "       X XXXXXXXX         ",
+    "         XXXXXXXX         ",
+    "        XXXXXXXXXX        ",
+    "       XXX      XXX       ",
+    "      XXX        XXX      ",
   ];
   return (
     <div className="pixel-avatar" aria-label="Pixel art avatar" role="img">
@@ -96,7 +104,7 @@ function JobCard({ title, company, period, bullets }) {
 // ── DATA ──────────────────────────────────────────────────────────────────────
 const NAV = [
   { label: "About", href: "#about" },
-  { label: "Work", href: "#experience" },
+  { label: "Experience", href: "#experience" },
   { label: "Education", href: "#education" },
 ];
 
@@ -128,6 +136,14 @@ const JOBS = [
       "Completed 30+ test tickets involving front-end and API/back-end validation, ensuring high-quality releases within an Agile/Kanban environment.",
     ],
   },
+  {
+    title: "School of Information Technology Peer Mentor",
+    company: "Fanshawe College",
+    period: "Jan 2023 - Dec 2023",
+    bullets: [
+      "Provided academic guidance to new and existing students regarding programming languages, troubleshooting, and application configuration.",
+    ],
+  },
 ];
 
 const EDU = [
@@ -154,7 +170,7 @@ export default function App() {
       <header className="header" role="banner">
         <div className="header-inner">
           <a href="#about" className="logo" onClick={e => { e.preventDefault(); scrollTo("#about"); }}>
-            <span className="logo-bracket">&lt;</span>TRISH-CS<span className="logo-bracket">/&gt;</span>
+            <span className="logo-bracket">&lt;</span>TRISH-CS<span className="logo-bracket">&gt;</span>
           </a>
           <nav aria-label="Main navigation">
             <button
@@ -240,7 +256,7 @@ export default function App() {
         <div className="footer-inner">
           <span>© {new Date().getFullYear()} Trishia Mae Salamangkit</span>
           <span className="footer-sep" aria-hidden="true">·</span>
-          <span>v1.0.0</span>
+          <span>v2.0.0</span>
           <span className="footer-sep" aria-hidden="true">·</span>
           <span>Built with React · Vite · CSS </span>
         </div>
