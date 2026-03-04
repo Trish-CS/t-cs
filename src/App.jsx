@@ -101,11 +101,59 @@ function JobCard({ title, company, period, bullets }) {
   );
 }
 
+// ── Contact Form ──────────────────────────────────────────────────────────────
+function ContactForm() {
+  const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [status, setStatus] = useState(null);
+
+  const handleChange = e => setForm({ ...form, [e.target.name]: e.target.value });
+
+  const handleSubmit = e => {
+    e.preventDefault();
+    const endpoint = "https://formspree.io/f/mbdanejp";
+    fetch(endpoint, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Accept: "application/json" },
+      body: JSON.stringify(form),
+    })
+      .then(r => {
+        if (r.ok) { setStatus("sent"); setForm({ name: "", email: "", message: "" }); }
+        else setStatus("error");
+      })
+      .catch(() => setStatus("error"));
+  };
+
+  return (
+    <form className="contact-form" onSubmit={handleSubmit} noValidate aria-label="Contact form">
+      <div className="form-row">
+        <div className="form-group">
+          <label htmlFor="name">Name</label>
+          <input id="name" name="name" type="text" value={form.name} onChange={handleChange} required autoComplete="name" placeholder="Enter your name" />
+        </div>
+        <div className="form-group">
+          <label htmlFor="email">Email</label>
+          <input id="email" name="email" type="email" value={form.email} onChange={handleChange} required autoComplete="email" placeholder="Enter your email" />
+        </div>
+      </div>
+      <div className="form-group">
+        <label htmlFor="message">Message</label>
+        <textarea id="message" name="message" value={form.message} onChange={handleChange} required rows={5} placeholder="Send me a message!" />
+      </div>
+      <button type="submit" className="btn-pixel">
+        <span aria-hidden="true">▶ </span>SEND MESSAGE
+      </button>
+      {status === "sent" && <p className="form-status success" role="status">Message sent! I'll be in touch soon.</p>}
+      {status === "error" && <p className="form-status error" role="alert">Something went wrong. Please try again or email me directly.</p>}
+    </form>
+  );
+}
+
 // ── DATA ──────────────────────────────────────────────────────────────────────
 const NAV = [
   { label: "About", href: "#about" },
   { label: "Experience", href: "#experience" },
   { label: "Education", href: "#education" },
+  { label: "Contact", href: "#contact" },
 ];
 
 const JOBS = [
@@ -249,12 +297,25 @@ export default function App() {
           </div>
         </Section>
 
+        {/* ── CONTACT ── */}
+        <Section id="contact" title="Get in Touch">
+          <div className="contact-wrapper">
+            <p className="contact-intro">
+              Have a project in mind? Want to collaborate? Or just want to say hi?
+              Drop me a message and I'll get back to you!
+            </p>
+            <ContactForm />
+          </div>
+        </Section>
+
       </main>
 
       {/* ── FOOTER ── */}
       <footer className="footer" role="contentinfo">
         <div className="footer-inner">
           <span>© {new Date().getFullYear()} Trishia Mae Salamangkit</span>
+          <span className="footer-sep" aria-hidden="true">·</span>
+          <span>salamangkittrishia@gmail.com</span>
           <span className="footer-sep" aria-hidden="true">·</span>
           <span>v2.0.0</span>
           <span className="footer-sep" aria-hidden="true">·</span>
