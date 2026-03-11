@@ -3,37 +3,41 @@
 
 /* ── CSS Variables (Dark & Light themes) ─────────────────────────────────── */
 :root, [data-theme="dark"] {
-  --bg:           #0d1b2a;
-  --bg2:          #13293d;
-  --bg3:          #16324f;
-  --surface:      #18435a;
-  --border:       #2a628f;
-  --accent:       #3e92cc;
-  --accent2:      #62b0e8;
-  --text:         #e8f4fc;
-  --text-muted:   #8ab4cc;
-  --pixel-on:     #3e92cc;
-  --pixel-eye:    #62b0e8;
-  --shadow:       0 4px 0 #0d1b2a, 0 8px 32px rgba(62,146,204,0.18);
-  --header-bg:    rgba(13,27,42,0.92);
-  --btn-text:     #0d1b2a;
+  --bg:           #09060f;
+  --bg2:          #0f0a1a;
+  --bg3:          #160d24;
+  --surface:      #1a1028;
+  --border:       #532b88;
+  --accent:       #9b72cf;
+  --accent2:      #c8b1e4;
+  --text:         #f4effa;
+  --text-muted:   #9b8fb0;
+  --pixel-on:     #9b72cf;
+  --pixel-eye:    #c8b1e4;
+  --shadow:       0 4px 0 #09060f, 0 8px 32px rgba(155,114,207,0.22);
+  --header-bg:    rgba(9,6,15,0.93);
+  --btn-text:     #f4effa;
+  --grid-color:   rgba(155,114,207,0.07);
+  --scanline:     rgba(155,114,207,0.04);
 }
 
 [data-theme="light"] {
-  --bg:           #e8f4fc;
-  --bg2:          #c8dff0;
-  --bg3:          #b0cfe5;
+  --bg:           #f4effa;
+  --bg2:          #e8ddf5;
+  --bg3:          #d9c8ee;
   --surface:      #ffffff;
-  --border:       #3e92cc;
-  --accent:       #2a628f;
-  --accent2:      #13293d;
-  --text:         #13293d;
-  --text-muted:   #2a628f;
-  --pixel-on:     #13293d;
-  --pixel-eye:    #3e92cc;
-  --shadow:       0 4px 0 #a0c4db, 0 8px 32px rgba(19,41,61,0.12);
-  --header-bg:    rgba(232,244,252,0.95);
-  --btn-text:     #e8f4fc;
+  --border:       #9b72cf;
+  --accent:       #532b88;
+  --accent2:      #2f184b;
+  --text:         #2f184b;
+  --text-muted:   #532b88;
+  --pixel-on:     #532b88;
+  --pixel-eye:    #9b72cf;
+  --shadow:       0 4px 0 #d9c8ee, 0 8px 32px rgba(83,43,136,0.14);
+  --header-bg:    rgba(244,239,250,0.95);
+  --btn-text:     #f4effa;
+  --grid-color:   rgba(83,43,136,0.07);
+  --scanline:     rgba(83,43,136,0.04);
 }
 
 /* ── Reset & Base ─────────────────────────────────────────────────────────── */
@@ -425,7 +429,7 @@ nav { margin-left: auto; }
   transition: border-color 0.2s;
 }
 .form-group input:focus,
-.form-group textarea:focus { border-color: var(--accent); outline: none; box-shadow: 0 0 0 3px rgba(62,146,204,0.3); }
+.form-group textarea:focus { border-color: var(--accent); outline: none; box-shadow: 0 0 0 3px rgba(155,114,207,0.35);}
 .form-group input::placeholder,
 .form-group textarea::placeholder { color: var(--text-muted); opacity: 0.6; }
 

@@ -22,7 +22,7 @@ function StarField({ dark }) {
       stars.forEach(star => {
         star.t += star.speed;
         const alpha = 0.4 + 0.6 * Math.abs(Math.sin(star.t));
-        ctx.fillStyle = dark ? `rgba(62,146,204,${alpha})` : `rgba(19,41,61,${alpha})`;
+        ctx.fillStyle = dark ? `rgba(200,177,228,${alpha})` : `rgba(83,43,136,${alpha})`;
         ctx.fillRect(star.x, star.y, star.s, star.s);
       });
       raf = requestAnimationFrame(draw);
