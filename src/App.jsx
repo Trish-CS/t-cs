@@ -408,11 +408,40 @@ export default function App() {
         {/* ── CONTACT ── */}
         <Section id="contact" title="Get in Touch">
           <div className="contact-wrapper">
-            <p className="contact-intro">
-              Have a project in mind? Want to collaborate? Or just want to say hi?
-              Drop me a message and I'll get back to you!
-            </p>
-            <ContactForm />
+            <div className="contact-left">
+              <p className="contact-intro">
+                Have a project in mind? Want to collaborate? Or just want to say hi?
+                Drop me a message and I'll get back to you!
+              </p>
+              <ContactForm />
+            </div>
+            <div className="contact-right">
+              <div className="contact-right-title">FIND ME AT</div>
+              <a
+                href="mailto:salamangkittrishia@gmail.com"
+                className="contact-method"
+                aria-label="Send email"
+              >
+                <div>
+                  <div className="contact-method-label">EMAIL</div>
+                  <div className="contact-method-value">salamangkittrishia@gmail.com</div>
+                  <div className="contact-method-desc">Best for detailed inquiries</div>
+                </div>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/trishia-mae-salamangkit-896003275/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="contact-method"
+                aria-label="LinkedIn profile (opens in new tab)"
+              >
+                <div>
+                  <div className="contact-method-label">LINKEDIN</div>
+                  <div className="contact-method-value">trishia-mae-salamangkit</div>
+                  <div className="contact-method-desc">Let's connect professionally</div>
+                </div>
+              </a>
+            </div>
           </div>
         </Section>
 
@@ -422,8 +451,6 @@ export default function App() {
       <footer className="footer" role="contentinfo">
         <div className="footer-inner">
           <span>© {new Date().getFullYear()} Trishia Mae Salamangkit</span>
-          <span className="footer-sep" aria-hidden="true">·</span>
-          <span>salamangkittrishia@gmail.com</span>
           <span className="footer-sep" aria-hidden="true">·</span>
           <span>v2.0.0</span>
           <span className="footer-sep" aria-hidden="true">·</span>
