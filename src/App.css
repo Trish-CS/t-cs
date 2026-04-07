@@ -397,6 +397,72 @@ nav { margin-left: auto; }
 .edu-icon { font-size: 1.5rem; flex-shrink: 0; }
 .edu-note { font-size: 0.92rem; color: var(--text-muted); margin-top: 0.3rem; }
 
+/* ── SKILLS SECTION ───────────────────────────────────────────────────────── */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.skills-category {
+  background: var(--surface);
+  border: 2px solid var(--border);
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.skills-category:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 6px 6px 0 var(--border);
+}
+
+.skills-category-title {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 0.6rem;
+  color: var(--accent2);
+  margin-bottom: 1.25rem;
+  letter-spacing: 1px;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.75rem;
+}
+
+.skills-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.skill-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.78rem;
+  color: var(--text);
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  padding: 0.3rem 0.65rem;
+  letter-spacing: 0.5px;
+  transition: background 0.15s, border-color 0.15s, color 0.15s, transform 0.1s;
+}
+.skill-chip:hover {
+  background: var(--accent);
+  border-color: var(--accent2);
+  color: var(--btn-text);
+  transform: translate(-1px, -1px);
+}
+
+.skill-chip-icon {
+  width: 16px;
+  height: 16px;
+  display: block;
+  flex-shrink: 0;
+}
+
+@media (max-width: 680px) {
+  .skills-grid { grid-template-columns: 1fr; }
+}
+
 /* ── CONTACT ──────────────────────────────────────────────────────────────── */
 .contact-intro {
   color: var(--text-muted);

@@ -101,6 +101,41 @@ function JobCard({ title, company, period, bullets }) {
   );
 }
 
+// ── Skills Section ────────────────────────────────────────────────────────────
+function SkillIcon({ slug, color, name }) {
+  if (!slug) return null;
+  return (
+    <img
+      src={`https://cdn.simpleicons.org/${slug}/${color}`}
+      alt=""
+      aria-hidden="true"
+      width="16"
+      height="16"
+      className="skill-chip-icon"
+      loading="lazy"
+    />
+  );
+}
+function SkillsSection() {
+  return (
+    <div className="skills-grid">
+      {SKILLS.map((cat, i) => (
+        <div key={i} className="skills-category">
+          <div className="skills-category-title">{cat.category}</div>
+          <div className="skills-chips">
+            {cat.items.map((skill, j) => (
+              <span key={j} className="skill-chip">
+                <SkillIcon slug={skill.slug} color={skill.color} name={skill.name} />
+                {skill.name}
+              </span>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
 // ── Contact Form ──────────────────────────────────────────────────────────────
 function ContactForm() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
@@ -153,6 +188,7 @@ const NAV = [
   { label: "About", href: "#about" },
   { label: "Experience", href: "#experience" },
   { label: "Education", href: "#education" },
+  { label: "Skills", href: "#skills" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -196,6 +232,73 @@ const JOBS = [
 
 const EDU = [
   { degree: "Computer Programming and Analysis (Co-op)", school: "Fanshawe College", period: "2022 - 2025", note: "4.15 GPA, President's Honor Roll" },
+];
+
+const SKILLS = [
+  {
+    category: "Languages",
+    items: [
+      { name: "Kotlin",     slug: "kotlin",      color: "7F52FF" },
+      { name: "SQL",        slug: "postgresql",  color: "4169E1" },
+      { name: "JavaScript", slug: "javascript",  color: "F7DF1E" },
+      { name: "TypeScript", slug: "typescript",  color: "3178C6" },
+      { name: "Python",     slug: "python",      color: "3776AB" },
+      { name: "C#",         slug: null },
+      { name: "Java",       slug: null },
+      { name: "C++",        slug: "cplusplus",   color: "00599C" },
+      { name: "COBOL",      slug: null },
+    ],
+  },
+  {
+    category: "Frontend",
+    items: [
+      { name: "React",        slug: "react",       color: "61DAFB" },
+      { name: "Vue.js",       slug: "vuedotjs",    color: "4FC08D" },
+      { name: "React Native", slug: "react",       color: "61DAFB" },
+      { name: "HTML5",        slug: "html5",       color: "E34F26" },
+      { name: "CSS",          slug: "css",         color: "1572B6" },
+      { name: "Bootstrap",    slug: "bootstrap",   color: "7952B3" },
+      { name: "Tailwind CSS", slug: "tailwindcss", color: "06B6D4" },
+    ],
+  },
+  {
+    category: "Backend & Runtime",
+    items: [
+      { name: "Node.js",      slug: "nodedotjs",  color: "339933" },
+      { name: "Express",      slug: "express",    color: "c8b1e4" },
+      { name: "Next.js",      slug: "nextdotjs",  color: "c8b1e4" },
+      { name: "PHP",          slug: "php",        color: "777BB4" },
+      { name: "Spring Boot",  slug: "springboot", color: "6DB33F" },
+    ],
+  },
+  {
+    category: "Databases",
+    items: [
+      { name: "MySQL",      slug: "mysql",                 color: "4479A1" },
+      { name: "MongoDB",    slug: "mongodb",               color: "47A248" },
+      { name: "SQL Server", slug: null },
+    ],
+  },
+  {
+    category: "Tools & Environments",
+    items: [
+      { name: "Git",            slug: "git",              color: "F05032" },
+      { name: "GitHub",         slug: "github",           color: "c8b1e4" },
+      { name: "VS Code",        slug: null },
+      { name: "Visual Studio",  slug: null },
+      { name: "Android Studio", slug: "androidstudio",    color: "3DDC84" },
+      { name: "Eclipse",        slug: "eclipseide",       color: "2C2255" },
+      { name: "Postman",        slug: "postman",          color: "FF6C37" },
+      { name: "Jira",           slug: "jira",             color: "0052CC" },
+      { name: "Sauce Labs",     slug: null },
+      { name: "Cypress",        slug: "cypress",          color: "69D3A7" },
+      { name: "Splunk",         slug: "splunk",           color: "000000" },
+      { name: "Supabase",       slug: "supabase",         color: "3FCF8E" },
+      { name: "XAMPP",          slug: "xampp",            color: "FB7A24" },
+      { name: "Expo",           slug: "expo",             color: "1C2024" },
+      { name: "Docker",         slug: "docker",           color: "2496ED" },
+    ],
+  },
 ];
 
 // ── APP ───────────────────────────────────────────────────────────────────────
@@ -295,6 +398,11 @@ export default function App() {
               </article>
             ))}
           </div>
+        </Section>
+
+        {/* ── SKILLS ── */}
+        <Section id="skills" title="Skills">
+          <SkillsSection />
         </Section>
 
         {/* ── CONTACT ── */}
